@@ -5,7 +5,7 @@ export async function hashPassword(password: string): Promise<string> {
   // Generate a random salt
   const salt = randomBytes(16).toString("hex")
 
-  // Hash the password with the salt using PBKDF2
+  // Hash the password with the salt 
   const hash = pbkdf2Sync(password, salt, 1000, 64, "sha512").toString("hex")
 
   // Return the salt and hash combined
